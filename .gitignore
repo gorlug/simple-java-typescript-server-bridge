@@ -1,0 +1,9 @@
+bin/
+.gradle/
+gradle*
+etc/
+build/
+.idea/
+local.properties
+out/
+typescript-bridge-temp.iml

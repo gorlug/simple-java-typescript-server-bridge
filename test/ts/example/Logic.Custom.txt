@@ -1,0 +1,32 @@
+function Custom()
+{
+    this.init_objects = false;
+    this.objects = null;
+    
+};
+
+
+Custom.VERSION = 'custom 5.2, core ' + Booking.VERSION;
+Custom.prototype.DEBUG = false; 
+Custom.STATIC_DEBUG = false;
+
+Custom.validateStaffId = function(staff_id)
+{
+    staff_id = util.trim(staff_id);
+    if(jtype.isNumeric(staff_id))
+    {
+        staff_id = util.prefix(staff_id,"0",Custom.STAFF_ID_LENGTH); 
+    }
+    return staff_id;
+}
+
+Custom.prototype.initStaff = function(staff_id)
+{
+    var st = new Staff(staff_id, this.tcon);
+    return st;
+}
+
+Custom.prototype.initWorkplace = function(workplace_id)
+{
+    return {};
+}
